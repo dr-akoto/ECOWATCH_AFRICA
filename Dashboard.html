@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EcoWatch Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for charts -->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>EcoWatch Dashboard</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard">
+        <div class="dashboard-container">
+            <h2>Real-time Weather and Ecosystem Data</h2>
+            <p>Track live weather conditions and their effects on the ecosystem with aesthetic data visualizations.</p>
+
+            <div class="charts-container">
+                <!-- Bar Chart: Temperature Over Time -->
+                <div class="chart">
+                    <h3>Temperature Over Time (°C)</h3>
+                    <canvas id="temperatureChart"></canvas>
+                </div>
+
+                <!-- Pie Chart: Ecosystem Impact -->
+                <div class="chart">
+                    <h3>Ecosystem Impact Distribution</h3>
+                    <canvas id="impactChart"></canvas>
+                </div>
+
+                <!-- Bar Chart: Areas of Predominant Effect -->
+                <div class="chart">
+                    <h3>Areas of Predominant Effect</h3>
+                    <canvas id="effectChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Footer Section -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>EcoWatch is dedicated to environmental monitoring and sustainable forestry practices.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> EcoWatch. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Chart.js -->
+    <!-- <script>
+        // Dummy real-time data simulation
+        let temperatureData = [24, 25, 26, 27, 28, 29, 30, 29, 28, 26];
+        let ecosystemImpactData = [25, 15, 20, 40]; // Example categories (e.g., deforestation, wildlife loss)
+        let effectAreasData = [35, 25, 20, 15, 5]; // Example regions of effect
+
+        // Labels for time and categories
+        let timeLabels = ['1 AM', '3 AM', '6 AM', '9 AM', '12 PM', '3 PM', '6 PM', '9 PM', '12 AM', '3 AM'];
+        let categories = ['Deforestation', 'Wildlife Loss', 'Soil Degradation', 'Climate Change'];
+        let regions = ['Region A', 'Region B', 'Region C', 'Region D', 'Region E'];
+
+        // Bar Chart for Temperature Over Time
+        const tempCtx = document.getElementById('temperatureChart').getContext('2d');
+        const tempChart = new Chart(tempCtx, {
+            type: 'bar',
+            data: {
+                labels: timeLabels,
+                datasets: [{
+                    label: 'Temperature (°C)',
+                    data: temperatureData,
+                    backgroundColor: '#74b9ff',
+                    borderColor: '#0984e3',
+                    borderWidth: 2,
+                    hoverBackgroundColor: '#0984e3'
+                }]
+            },
+            options: {
+                responsive: true,
+                animation: {
+                    duration: 1500,
+                    easing: 'easeInOutQuad'
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Pie Chart for Ecosystem Impact
+        const impactCtx = document.getElementById('impactChart').getContext('2d');
+        const impactChart = new Chart(impactCtx, {
+            type: 'pie',
+            data: {
+                labels: categories,
+                datasets: [{
+                    data: ecosystemImpactData,
+                    backgroundColor: ['#ff7675', '#fdcb6e', '#55efc4', '#00b894'],
+                    hoverOffset: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                }
+            }
+        });
+
+        // Bar Chart for Areas of Predominant Effect
+        const effectCtx = document.getElementById('effectChart').getContext('2d');
+        const effectChart = new Chart(effectCtx, {
+            type: 'bar',
+            data: {
+                labels: regions,
+                datasets: [{
+                    label: 'Predominant Effect',
+                    data: effectAreasData,
+                    backgroundColor: '#a29bfe',
+                    borderColor: '#6c5ce7',
+                    borderWidth: 2,
+                    hoverBackgroundColor: '#6c5ce7'
+                }]
+            },
+            options: {
+                responsive: true,
+                animation: {
+                    duration: 1500,
+                    easing: 'easeInOutCubic'
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Simulate real-time updates every 5 seconds
+        function updateCharts() {
+            temperatureData.push(Math.floor(Math.random() * 6) + 25); // Random temperature
+            temperatureData.shift(); // Remove first element
+
+            ecosystemImpactData = ecosystemImpactData.map(() => Math.floor(Math.random() * 50) + 10);
+            effectAreasData = effectAreasData.map(() => Math.floor(Math.random() * 40) + 10);
+
+            tempChart.update();
+            impactChart.update();
+            effectChart.update();
+        }
+
+        // Update the charts every 5 seconds
+        setInterval(updateCharts, 5000);
+    </script> -->
+
+    <script>
+        // WebSocket setup
+        const socket = new WebSocket('ws://localhost:3000');
+    
+        // Initial chart data (empty to be filled by server)
+        let temperatureData = [];
+        let ecosystemImpactData = [];
+        let effectAreasData = [];
+    
+        // Labels for time and categories
+        let timeLabels = ['1 AM', '3 AM', '6 AM', '9 AM', '12 PM', '3 PM', '6 PM', '9 PM', '12 AM', '3 AM'];
+        let categories = ['Deforestation', 'Wildlife Loss', 'Soil Degradation', 'Climate Change'];
+        let regions = ['Region A', 'Region B', 'Region C', 'Region D', 'Region E'];
+    
+        // Bar Chart for Temperature Over Time
+        const tempCtx = document.getElementById('temperatureChart').getContext('2d');
+        const tempChart = new Chart(tempCtx, {
+            type: 'bar',
+            data: {
+                labels: timeLabels,
+                datasets: [{
+                    label: 'Temperature (°C)',
+                    data: temperatureData,
+                    backgroundColor: '#74b9ff',
+                    borderColor: '#0984e3',
+                    borderWidth: 2,
+                    hoverBackgroundColor: '#0984e3'
+                }]
+            },
+            options: {
+                responsive: true,
+                animation: {
+                    duration: 1500,
+                    easing: 'easeInOutQuad'
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    
+        // Pie Chart for Ecosystem Impact
+        const impactCtx = document.getElementById('impactChart').getContext('2d');
+        const impactChart = new Chart(impactCtx, {
+            type: 'pie',
+            data: {
+                labels: categories,
+                datasets: [{
+                    data: ecosystemImpactData,
+                    backgroundColor: ['#ff7675', '#fdcb6e', '#55efc4', '#00b894'],
+                    hoverOffset: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                }
+            }
+        });
+    
+        // Bar Chart for Areas of Predominant Effect
+        const effectCtx = document.getElementById('effectChart').getContext('2d');
+        const effectChart = new Chart(effectCtx, {
+            type: 'bar',
+            data: {
+                labels: regions,
+                datasets: [{
+                    label: 'Predominant Effect',
+                    data: effectAreasData,
+                    backgroundColor: '#a29bfe',
+                    borderColor: '#6c5ce7',
+                    borderWidth: 2,
+                    hoverBackgroundColor: '#6c5ce7'
+                }]
+            },
+            options: {
+                responsive: true,
+                animation: {
+                    duration: 1500,
+                    easing: 'easeInOutCubic'
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    
+        // Receive real-time data from the WebSocket
+        socket.onmessage = function(event) {
+            const data = JSON.parse(event.data);
+    
+            // Update chart data
+            temperatureData = data.temperature;
+            ecosystemImpactData = data.ecosystemImpact;
+            effectAreasData = data.effectAreas;
+    
+            // Update the charts
+            tempChart.data.datasets[0].data = temperatureData;
+            impactChart.data.datasets[0].data = ecosystemImpactData;
+            effectChart.data.datasets[0].data = effectAreasData;
+    
+            // Redraw the charts
+            tempChart.update();
+            impactChart.update();
+            effectChart.update();
+        };
+    </script>
+    
+</body>
+</html>
