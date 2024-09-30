@@ -5,100 +5,246 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoWatch - Ecosystem Impact Tracking</title>
     <link rel="stylesheet" href="report.css">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
 <body>
-    <!-- Header Section -->
-    <nav>
-        <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="Dashboard.html">Dashboard</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="landing.html">landing</a></li>
-        </ul>
-    </nav>
 
-    <header class="header">
-        <h1>EcoWatch - Ecosystem Impact Tracking</h1>
-        <p>Analyze how changing weather conditions impact deforestation and wildlife.</p>
-    </header>
-
-    <!-- Impact of Deforestation Section -->
-    <section class="impact-section">
-        <h2>The Impact of Deforestation on Wildlife</h2>
-        <div class="impact-content">
-            <div class="impact-image">
-                <img src="./images/Firefly get a humanly and authentic picture of a man cutting down tree with chain-saw in a deep fore.jpg" alt="Deforestation Impact">
+        <header class="header">
+            <div class="container">
+                <nav class="navbar">
+                    <a href="#" class="logo">EcoWatch</a>
+                    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html" >Home</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="report.html" class="active">Report</a></li>
+                    </ul>
+                </nav>
             </div>
-            <div class="impact-text">
-                <p>Deforestation is one of the greatest threats to our planet's biodiversity. As trees are cut down, animals lose their homes, food sources, and safe breeding grounds. This disruption leads to a decline in species populations and can result in extinction.</p>
-                <p>Wildlife relies on the intricate balance of forest ecosystems. The loss of trees affects the climate, reducing the amount of rainfall and increasing temperature fluctuations, which in turn impacts the entire ecosystem. Preserving forests is essential for protecting these species and ensuring a balanced ecosystem for future generations.</p>
+            <div class="hero container">
+                <h1>EcoWatch - Ecosystem Impact Tracking</h1>
+                <p>Analyze how changing weather conditions impact deforestation and wildlife.</p>
+                <a href="#impact" class="cta-button">Learn More</a>
+            </div>
+        </header>
+    
+        <!-- Rest of the HTML remains the same -->
+    
+    
+
+    <main>
+        <section id="impact" class="impact-section">
+            <div class="container">
+                <h2>The Impact of Deforestation on Wildlife</h2>
+                <div class="impact-content">
+                    <div class="impact-image">
+                        <img src="./images/dried.jpg" alt="Deforestation Impact">
+                    </div>
+                    <div class="impact-text">
+                        <p>Deforestation is one of the greatest threats to our planet's biodiversity. As trees are cut down, animals lose their homes, food sources, and safe breeding grounds. This disruption leads to a decline in species populations and can result in extinction.</p>
+                        <p>Wildlife relies on the intricate balance of forest ecosystems. The loss of trees affects the climate, reducing the amount of rainfall and increasing temperature fluctuations, which in turn impacts the entire ecosystem. Preserving forests is essential for protecting these species and ensuring a balanced ecosystem for future generations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <h2>Deforestation & Wildlife Impact Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="./images/dried.jpg" alt="Forest Wildlife">
+                        <div class="gallery-caption">
+                            <h3>Forest Wildlife</h3>
+                            <p>Rich biodiversity depends on forest ecosystems.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./images/treeCutting (2).jpg" alt="Deforestation Aftermath">
+                        <div class="gallery-caption">
+                            <h3>Deforestation Aftermath</h3>
+                            <p>Wildlife struggles as deforestation rises.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./images/planting.jpg" alt="Threatened Species">
+                        <div class="gallery-caption">
+                            <h3>Threatened Species</h3>
+                            <p>Many species are at risk due to habitat loss.</p>
+                        </div>
+                    </div>
+                    <!-- <div class="gallery-item">
+                        <img src="./images/planting.jpg" alt="Forest Regeneration">
+                        <div class="gallery-caption">
+                            <h3>Forest Regeneration</h3>
+                            <p>Conservation efforts are vital for recovery.</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="report" class="report-section">
+            <div class="container">
+                <h2>Report Illegal Deforestation</h2>
+                <form id="reportForm" class="report-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" placeholder="Location of Deforestation" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="details">Details</label>
+                        <textarea id="details" name="details" rows="4" placeholder="Describe the illegal deforestation activity" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Submit Report</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>EcoWatch is dedicated to environmental monitoring and sustainable forestry practices.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Sliding Card Section -->
-    <section class="slider-section">
-        <h2>Deforestation & Wildlife Impact in Pictures</h2>
-        <div class="slider-container">
-            <div class="slider" id="slider">
-                <!-- Card 1 -->
-                <div class="card">
-                    <img src="image1.jpg" alt="Forest Wildlife">
-                    <div class="card-content">
-                        <h3>Forest Wildlife</h3>
-                        <p>Rich biodiversity depends on forest ecosystems.</p>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="card">
-                    <img src="image2.jpg" alt="Deforestation Aftermath">
-                    <div class="card-content">
-                        <h3>Deforestation Aftermath</h3>
-                        <p>Wildlife struggles as deforestation rises.</p>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="card">
-                    <img src="image3.jpg" alt="Threatened Species">
-                    <div class="card-content">
-                        <h3>Threatened Species</h3>
-                        <p>Many species are at risk due to habitat loss.</p>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="card">
-                    <img src="image4.jpg" alt="Forest Regeneration">
-                    <div class="card-content">
-                        <h3>Forest Regeneration</h3>
-                        <p>Conservation efforts are vital for recovery.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="footer-bottom">
+            
+            <p>&copy; <span id="current-year"></span> EcoWatch. All rights reserved.</p>
         </div>
-    </section>
+    </footer>
 
-    <!-- Report Form Section -->
-    <section class="report-section">
-        <h2>Report Illegal Deforestation</h2>
-        <form class="report-form">
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Your Name" required>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Your Email" required>
+    <script >
+       document.addEventListener('DOMContentLoaded', () => {
+    // Responsive navigation
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
 
-            <label for="location">Location</label>
-            <input type="text" id="location" placeholder="Location of Deforestation" required>
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
 
-            <label for="details">Details</label>
-            <textarea id="details" rows="4" placeholder="Describe the illegal deforestation activity" required></textarea>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
 
-            <button type="submit">Submit Report</button>
-        </form>
-    </section>
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
 
-    <script src="script.js"></script>
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 60,
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu if open
+                navMenu.classList.remove('active');
+            }
+        });
+    });
+
+    // Form submission
+    const reportForm = document.getElementById('reportForm');
+
+    reportForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Get the form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const location = document.getElementById('location').value;
+        const details = document.getElementById('details').value;
+        const timeSent = new Date().toISOString();
+
+        // Create the JSON object
+        const formData = {
+            name: name,
+            email: email,
+            location: location,
+            details: details,
+            timeSent: timeSent
+        };
+
+        // Simulate sending the JSON data to the backend
+        console.log('Sending report:', formData);
+
+        // In a real application, you would use fetch() to send the data to your backend
+        // For demonstration, we'll use a timeout to simulate an API call
+        setTimeout(() => {
+            // Simulate a successful submission
+            showNotification('Report submitted successfully!', 'success');
+            reportForm.reset();
+        }, 1000);
+    });
+
+    // Notification function
+    function showNotification(message, type) {
+        const notification = document.createElement('div');
+        notification.className = `notification ${type}`;
+        notification.textContent = message;
+
+        document.body.appendChild(notification);
+
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 500);
+        }, 3000);
+    }
+
+    // Intersection Observer for fade-in animation
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                fadeObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    fadeElements.forEach(element => {
+        fadeObserver.observe(element);
+    });
+});
+
+    
+    </script>
 </body>
 </html>

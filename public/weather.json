@@ -1,0 +1,16 @@
+{
+  "temperatureData": [
+    { "time": "1 AM", "temperature": 24 },
+    { "time": "3 AM", "temperature": 25 },
+    { "time": "6 AM", "temperature": 26 },
+    { "time": "9 AM", "temperature": 27 },
+    { "time": "12 PM", "temperature": 28 },
+    { "time": "3 PM", "temperature": 29 },
+    { "time": "6 PM", "temperature": 30 },
+    { "time": "9 PM", "temperature": 29 },
+    { "time": "12 AM", "temperature": 28 },
+    { "time": "3 AM", "temperature": 26 }
+  ],
+  "ecosystemImpact": [25, 15, 20, 40], 
+  "effectAreas": [35, 25, 20, 15, 5] 
+}
