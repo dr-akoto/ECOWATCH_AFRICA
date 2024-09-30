@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoWatch - Ecosystem Impact Tracking</title>
+    <link rel="stylesheet" href="report.css">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <!-- Header Section -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="Dashboard.html">Dashboard</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="landing.html">landing</a></li>
+        </ul>
+    </nav>
+
+    <header class="header">
+        <h1>EcoWatch - Ecosystem Impact Tracking</h1>
+        <p>Analyze how changing weather conditions impact deforestation and wildlife.</p>
+    </header>
+
+    <!-- Impact of Deforestation Section -->
+    <section class="impact-section">
+        <h2>The Impact of Deforestation on Wildlife</h2>
+        <div class="impact-content">
+            <div class="impact-image">
+                <img src="./images/Firefly get a humanly and authentic picture of a man cutting down tree with chain-saw in a deep fore.jpg" alt="Deforestation Impact">
+            </div>
+            <div class="impact-text">
+                <p>Deforestation is one of the greatest threats to our planet's biodiversity. As trees are cut down, animals lose their homes, food sources, and safe breeding grounds. This disruption leads to a decline in species populations and can result in extinction.</p>
+                <p>Wildlife relies on the intricate balance of forest ecosystems. The loss of trees affects the climate, reducing the amount of rainfall and increasing temperature fluctuations, which in turn impacts the entire ecosystem. Preserving forests is essential for protecting these species and ensuring a balanced ecosystem for future generations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sliding Card Section -->
+    <section class="slider-section">
+        <h2>Deforestation & Wildlife Impact in Pictures</h2>
+        <div class="slider-container">
+            <div class="slider" id="slider">
+                <!-- Card 1 -->
+                <div class="card">
+                    <img src="image1.jpg" alt="Forest Wildlife">
+                    <div class="card-content">
+                        <h3>Forest Wildlife</h3>
+                        <p>Rich biodiversity depends on forest ecosystems.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="card">
+                    <img src="image2.jpg" alt="Deforestation Aftermath">
+                    <div class="card-content">
+                        <h3>Deforestation Aftermath</h3>
+                        <p>Wildlife struggles as deforestation rises.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="card">
+                    <img src="image3.jpg" alt="Threatened Species">
+                    <div class="card-content">
+                        <h3>Threatened Species</h3>
+                        <p>Many species are at risk due to habitat loss.</p>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="card">
+                    <img src="image4.jpg" alt="Forest Regeneration">
+                    <div class="card-content">
+                        <h3>Forest Regeneration</h3>
+                        <p>Conservation efforts are vital for recovery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Report Form Section -->
+    <section class="report-section">
+        <h2>Report Illegal Deforestation</h2>
+        <form class="report-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your Name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Your Email" required>
+
+            <label for="location">Location</label>
+            <input type="text" id="location" placeholder="Location of Deforestation" required>
+
+            <label for="details">Details</label>
+            <textarea id="details" rows="4" placeholder="Describe the illegal deforestation activity" required></textarea>
+
+            <button type="submit">Submit Report</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -39,12 +39,13 @@ nav ul li a:hover, nav ul li a.active {
 
 /* Hero Section */
 .hero-section {
-    background: url('images/forest-bg.jpg') no-repeat center center/cover;
+    background: url(./images/landing.jpg)no-repeat center center/cover;
     height: 60vh;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 5px;
 }
 
 .overlay {
@@ -99,52 +100,57 @@ nav ul li a:hover, nav ul li a.active {
     overflow: hidden;
 }
 
-.slideshow-container {
-    height: 100%;
+.slider-container {
+    position: relative;
     width: 100%;
+    overflow: hidden;
+   justify-content: center;
+   display:flex;
+   align-items:center
+  
 }
 
-.slides-wrapper {
+/* Slider with cards */
+.slider {
     display: flex;
-    height: 100%;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 1s ease-in-out;
 }
 
-.slide {
-    flex: 0 0 100%;
-    height: 100%;
+/* Card styles */
+.card {
+    flex: 0 0 25%; /* Four cards visible */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    opacity: 0.8;
+    transition:  ease, transform 0.5s ease;
 }
 
-.slide img {
+.card:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.card img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
 }
 
-.slide-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
-    font-size: 1.5rem;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.card:hover img {
+    transform: scale(1.1);
 }
 
-.slide-nav:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+.card-content h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2rem;
+    
 }
 
-.slide-nav.prev {
-    left: 20px;
+.card-content p {
+    font-size: 1rem;
 }
-
-.slide-nav.next {
-    right: 20px;
-}
-
 
 
 /* Features Section */
@@ -174,7 +180,7 @@ nav ul li a:hover, nav ul li a.active {
     border-radius: 15px;
     padding: 2rem;
     width: 30%;
-    min-width: 250px;
+    height:30vh;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     opacity: 0;
     transform: translateY(100px);
@@ -192,7 +198,7 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .feature-item img {
-    width: 100px;
+    width: 80%;
     margin-bottom: 1rem;
 }
 
@@ -210,7 +216,7 @@ nav ul li a:hover, nav ul li a.active {
 /* Footer */
 /* Footer */
 footer {
-    background-color: rgb(168, 121, 243);
+    background-color: rgb(19, 94, 44);
     color: white;
     padding: 3rem 0 1rem;
 }

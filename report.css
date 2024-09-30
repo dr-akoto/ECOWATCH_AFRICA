@@ -1,0 +1,197 @@
+/* General Reset and Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    background: linear-gradient(to right, #6e9479, #72b592);
+    color: white;
+    padding: 50px 20px;
+    height: 50vh;
+    align-items: center;
+    justify-content: center;
+    /* position: relative;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease-in-out;
+    will-change: transform; */
+    
+
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+.header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Impact Section */
+.impact-section {
+    padding: 50px 20px;
+    background-color: white;
+    margin: 30px 0;
+}
+
+.impact-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2f4f4f;
+}
+
+.impact-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.impact-image img {
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.impact-text {
+    max-width: 600px;
+    margin: 20px;
+}
+
+.impact-text p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* Slider Section */
+.slider-section {
+    background-color: #fafafa;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.slider-section h2 {
+    font-size: 2rem;
+    color: #2f4f4f;
+    margin-bottom: 20px;
+}
+
+.slider-container {
+    position: relative;
+    width: 90%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.slider {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.card {
+    flex: 0 0 25%;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    margin: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card-content h3 {
+    margin: 15px 0 10px;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.card-content p {
+    color: #777;
+    font-size: 1rem;
+}
+
+/* Report Section */
+.report-section {
+    padding: 50px 20px;
+    background-color: white;
+}
+
+.report-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2f4f4f;
+}
+
+.report-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.report-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.report-form input, .report-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.report-form button {
+    display: inline-block;
+    background-color: #72b592;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.report-form button:hover {
+    background-color: #6e9479;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .impact-content {
+        flex-direction: column;
+    }
+
+    .card {
+        flex: 0 0 100%;
+    }
+}

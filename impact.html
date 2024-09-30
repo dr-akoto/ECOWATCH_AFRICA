@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -49,4 +49,99 @@
         </div>
     </footer>
 </body>
-</html>
+</html> --><!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Card Slider with Aesthetic Transitions</title>
+        <link rel="stylesheet" href="impact.css">
+    </head>
+    <body>
+        <div class="slider-container">
+            <div class="slider" id="slider">
+                <!-- Card 1 -->
+                <div class="card">
+                    <img src="./images/home.jpg" alt="Image 1">
+                    <div class="card-content">
+                        <h3>Card Title 1</h3>
+                        <p>Description of card 1</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="card">
+                    <img src="./images/landing.jpg" alt="Image 1">
+                    <div class="card-content">
+                        <h3>Card Title 2</h3>
+                        <p>Description of card 2</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="card">
+                    <img src="./images/landing.jpg" alt="Image 1">
+                    <div class="card-content">
+                        <h3>Card Title 3</h3>
+                        <p>Description of card 3</p>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="card">
+                    <img src="./images/home.jpg" alt="Image 1">
+                    <div class="card-content">
+                        <h3>Card Title 4</h3>
+                        <p>Description of card 4</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation Arrows -->
+            <div class="nav-arrow left-arrow" id="prevBtn">&#10094;</div>
+            <div class="nav-arrow right-arrow" id="nextBtn">&#10095;</div>
+        </div>
+    
+        <script >// Selecting elements
+            const slider = document.getElementById('slider');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            let currentSlide = 0;
+            const totalCards = document.querySelectorAll('.card').length;
+            const visibleCards = 4; // Number of visible cards
+            
+            // Event listener for next button
+            nextBtn.addEventListener('click', () => {
+                slideNext();
+            });
+            
+            // Event listener for prev button
+            prevBtn.addEventListener('click', () => {
+                slidePrev();
+            });
+            
+            function slideNext() {
+                if (currentSlide < totalCards - visibleCards) {
+                    currentSlide++;
+                } else {
+                    currentSlide = 0; // Reset to the first slide when reaching the end
+                }
+                updateSliderPosition();
+            }
+            
+            function slidePrev() {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                } else {
+                    currentSlide = totalCards - visibleCards; // Go to the last slide if on the first one
+                }
+                updateSliderPosition();
+            }
+            
+            function updateSliderPosition() {
+                slider.style.transform = `translateX(-${currentSlide * 25}%)`;
+            }
+            
+            // Auto-slide functionality
+            setInterval(slideNext, 3000); // Slides every 3 seconds
+            </script>
+    </body>
+    </html>
+    
